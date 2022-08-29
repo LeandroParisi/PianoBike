@@ -1,7 +1,6 @@
 import { ThemeProvider } from '@mui/material';
 import classNames from 'classnames';
 import * as React from 'react';
-import * as animations from '../assets/styling/scss/effects/animations/animations.module.scss';
 import '../assets/styling/scss/reset.scss';
 import { theme } from '../assets/styling/themes/Mui/createtheme';
 import BottomMenu from '../components/MainComponents/BottomMenu/BottomMenu';
@@ -22,8 +21,9 @@ const LandingPage = () => (React.createElement(ThemeProvider, { theme: theme },
     React.createElement("main", { className: styles.mainPage },
         React.createElement(Overlay, null),
         React.createElement("iframe", { className: styles.mainVideo, src: `https://www.youtube.com/embed/GsqhJHC_wgI?P${ParseObjectToStringInfo(youtubeVideoInfo)}`, title: "Promo video", allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" }),
-        React.createElement("article", { className: classNames(styles.pitchPhrase, animations.typewriter) },
-            React.createElement("h1", null, "O primeiro piano sobre rodas da Am\u00E9rica Latina!")),
+        React.createElement("article", { className: classNames(styles.pitchPhrase) },
+            React.createElement("h1", null, "O 1\u00BA sobre rodas da Am\u00E9rica Latina!"),
+            React.createElement("h2", null, "Em uma nova etapa: agora voc\u00EA, artista, pode fazer parte desta revolu\u00E7\u00E3o!")),
         React.createElement(BottomMenu, null))));
 export default LandingPage;
 export const Head = () => (React.createElement(React.Fragment, null,

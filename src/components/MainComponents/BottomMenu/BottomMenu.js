@@ -17,7 +17,7 @@ const BottomMenu = ({}) => {
             React.createElement(Button, { variant: 'contained', size: 'medium', color: 'primary', className: styles.buttons, disabled: config.disabled, onClick: config.open }, text),
             React.createElement(Modal, { open: config.isOpened, onClose: config.close, "aria-labelledby": "modal-modal-title", "aria-describedby": "modal-modal-description" },
                 React.createElement(Box, null,
-                    React.createElement(Typography, { id: "modal-modal-title", variant: "h6", component: "h2" }, "Text in a modal"),
+                    React.createElement(Typography, { id: styles.modalTitle, variant: "h6", component: "h2" }, "Text in a modal"),
                     React.createElement(Typography, { id: "modal-modal-description", sx: { mt: 2 } }, "Duis mollis, est non commodo luctus, nisi erat porttitor ligula.")))));
     }
     return (React.createElement("nav", { className: styles.bottomMenu },
