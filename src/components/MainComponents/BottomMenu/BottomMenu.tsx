@@ -53,7 +53,7 @@ const BottomMenu = ({
       aria-describedby="modal-modal-description"
     >
       <Box>
-        <Typography id="modal-modal-title" variant="h6" component="h2">
+        <Typography id={styles.modalTitle} variant="h6" component="h2">
           Text in a modal
         </Typography>
         <Typography id="modal-modal-description" sx={{ mt: 2 }}>

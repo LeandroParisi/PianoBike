@@ -20,7 +20,7 @@ const config = {
                 start_url: '/',
                 theme_color: '#a2466c',
                 display: 'standalone',
-                icon: 'src/images/logos/Black_Transparent_1900x1900.png',
+                icon: 'src/assets/images/logos/Black_Transparent_1900x1900.png',
             },
         },
     ],

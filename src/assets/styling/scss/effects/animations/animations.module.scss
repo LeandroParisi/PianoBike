@@ -1,9 +1,13 @@
 .typewriter h1 {
+}
+
+@mixin typewriter($duration: 4s, $delay: 0, $start: forwards) {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.15em; /* Adjust as needed */
-  animation: typing 4s steps(40, end) forwards;
+  animation: typing $duration steps(40, end) $start;
+  animation-delay: $delay;
 }
 
 /* The typing effect */
@@ -27,5 +31,24 @@
   }
   100% {
     display: none;
+  }
+}
+
+// -----
+
+@mixin fadeIn($duration: 1s, $delay: 0, $start: forwards) {
+  transition: 1s;
+  animation-name: fadeIn;
+  animation-duration: $duration;
+  animation-fill-mode: $start;
+  animation-delay: $delay;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

@@ -1,5 +1,7 @@
+export const blinkCaret: string;
 export const errorInput: string;
 export const errorText: string;
+export const fadeIn: string;
 export const fullPage: string;
 export const gatsby: string;
 export const gatsbyFocusWrapper: string;
@@ -7,3 +9,4 @@ export const highlightText: string;
 export const mainPage: string;
 export const mainVideo: string;
 export const pitchPhrase: string;
+export const typing: string;

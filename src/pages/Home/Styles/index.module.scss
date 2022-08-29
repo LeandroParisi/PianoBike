@@ -3,6 +3,9 @@
 @import "../../../assets/styling/scss/globals.module.scss";
 @import "../../../assets/styling/scss/mixins.scss";
 @import "../../../assets/styling/scss/reset.scss";
+@import "../../../assets/styling/scss/effects/animations/animations.module.scss";
+
+$firstAnimationDuration: 3s;
 
 .mainPage {
   width: 100%;
@@ -17,14 +20,27 @@
   }
 
   .pitchPhrase {
+    @include flexBox(column, flex-start, flex-start);
+    gap: 7.5vh;
     position: absolute;
     z-index: 2;
     top: 7.5vh;
     left: 5vw;
 
-    h1 {
+    h1,
+    h2 {
       color: white;
+    }
+
+    h1 {
+      @include fadeIn($firstAnimationDuration);
       font-size: $font-xbig;
+    }
+
+    h2 {
+      @include typewriter($firstAnimationDuration - 1.5s, $firstAnimationDuration - 1.8s, backwards);
+      margin-left: 2vw;
+      font-size: $font-big;
     }
   }
 }

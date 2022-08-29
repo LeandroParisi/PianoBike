@@ -1,5 +1,7 @@
 @import "../../../assets/styling/scss/mixins.scss";
 @import "../../../assets/styling/scss/globals.module.scss";
+@import "../../../assets/styling/scss/effects/animations/animations.module.scss";
+@import "../../../pages/Home/Styles/index.module.scss";
 
 .bottomMenu {
   @include flexBox(row, space-around, center, wrap);
@@ -10,6 +12,24 @@
   width: 80%;
 
   .buttons {
+    @include fadeIn(3s, $firstAnimationDuration - 0.5s, backwards);
     font-weight: bold;
+  }
+}
+
+div[class^="MuiModal-root"] {
+  @include flexBox(columne);
+
+  div[class^="MuiBox-root"] {
+    background-color: $dark-transparent;
+    color: white;
+    width: 70vw;
+    height: 70vh;
+    padding: 2.5%;
+
+    #modalTitle {
+      color: $primaryYellow;
+      font-weight: bold;
+    }
   }
 }

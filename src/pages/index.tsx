@@ -2,7 +2,6 @@ import { ThemeProvider } from '@mui/material'
 import classNames from 'classnames'
 import type { HeadFC } from 'gatsby'
 import * as React from 'react'
-import * as animations from '../assets/styling/scss/effects/animations/animations.module.scss'
 import '../assets/styling/scss/reset.scss'
 import { theme } from '../assets/styling/themes/Mui/createtheme'
 import BottomMenu from '../components/MainComponents/BottomMenu/BottomMenu'
@@ -32,8 +31,9 @@ const LandingPage = () => (
         title="Promo video"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         />
-      <article className={classNames(styles.pitchPhrase, animations.typewriter)}>
-        <h1>O primeiro piano sobre rodas da América Latina!</h1>
+      <article className={classNames(styles.pitchPhrase)}>
+        <h1>O 1º sobre rodas da América Latina!</h1>
+        <h2>Em uma nova etapa: agora você, artista, pode fazer parte desta revolução!</h2>
       </article>
       <BottomMenu />
     </main>
