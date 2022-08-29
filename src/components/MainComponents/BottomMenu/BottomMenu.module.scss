@@ -1,0 +1,15 @@
+@import "../../../assets/styling/scss/mixins.scss";
+@import "../../../assets/styling/scss/globals.module.scss";
+
+.bottomMenu {
+  @include flexBox(row, space-around, center, wrap);
+  position: fixed;
+  z-index: 1;
+  bottom: 10vh;
+  left: 10%;
+  width: 80%;
+
+  .buttons {
+    font-weight: bold;
+  }
+}

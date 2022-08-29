@@ -1,4 +1,4 @@
-@import './colors.scss';
+@import "./colors.scss";
 
 @mixin screen($media) {
   @if $media == xs {
@@ -97,7 +97,6 @@
       @content;
     }
   }
-
 }
 
 @mixin flexBox($direction: row, $justify: center, $align: center, $wrap: wrap) {
@@ -115,52 +114,9 @@
 
 @mixin boxShadow($size: 3px, $blur: 3px, $color: $dark-transparent) {
   box-shadow: $color $size $size $blur;
-  transition: .3s;
+  transition: 0.3s;
 }
 
-@mixin dashboardColors() {
-  &.placed {
-    border: 1px solid $placed
-  };
-  
-  // &.toDo {
-  //   background-color: $toDo;
-  // };
-  
-  &.inProduction {
-    border: 1px solid $inProduction
-
-  };
-  
-  // &.readyToDeliver {
-  //   background-color: $readyToDeliver;
-  // };
-  
-  &.dispatched {
-    border: 1px solid $dispatched
-
-  };
-}
-
-@mixin dashboardHeaderColors() {
-  &.placed {
-    background-color: $placed;
-  };
-  
-  // &.toDo {
-  //   background-color: $toDo;
-  // };
-  
-  &.inProduction {
-    background-color: $inProduction;
-
-  };
-  
-  // &.readyToDeliver {
-  //   background-color: $readyToDeliver;
-  // };
-  
-  &.dispatched {
-    background-color: $dispatched;
-  };
+@mixin overlay($opacity: 0.3) {
+  background-color: rgba(0, 0, 0, $opacity);
 }

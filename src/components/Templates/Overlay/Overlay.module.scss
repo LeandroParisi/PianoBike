@@ -1,0 +1,10 @@
+@import "../../../assets/styling/scss/mixins.scss";
+
+.overlay {
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100vh;
+  top: 0;
+  z-index: 1;
+  @include overlay(0.7);
+}

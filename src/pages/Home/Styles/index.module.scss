@@ -1,9 +1,30 @@
+@import "../../../assets/styling/scss/fonts.scss";
+@import "../../../assets/styling/scss/colors.scss";
+@import "../../../assets/styling/scss/globals.module.scss";
+@import "../../../assets/styling/scss/mixins.scss";
+@import "../../../assets/styling/scss/reset.scss";
+
 .mainPage {
   width: 100%;
   height: 100%;
+  background: url("../../../assets/images/globo_urca.jpg") center center no-repeat;
+  background-size: cover;
 
   .mainVideo {
     width: 100%;
     height: 100%;
+    z-index: -1;
+  }
+
+  .pitchPhrase {
+    position: absolute;
+    z-index: 2;
+    top: 7.5vh;
+    left: 5vw;
+
+    h1 {
+      color: white;
+      font-size: $font-xbig;
+    }
   }
 }
