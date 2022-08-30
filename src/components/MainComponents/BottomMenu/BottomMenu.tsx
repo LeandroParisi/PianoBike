@@ -1,15 +1,28 @@
-import { Box, Modal, Typography } from '@mui/material'
+/* eslint-disable max-len */
+import { Box, Modal } from '@mui/material'
 import Button from '@mui/material/Button'
 import React, { useState } from 'react'
 import * as styles from './BottomMenu.module.scss'
 
-export interface BottomMenuProps {
+interface ButtonInfo {
+  title : string
+  description : string[]
+}
 
+const bePartButtonInfo : ButtonInfo = {
+  title: '',
+  description: [''],
+}
+
+const knowMoreButtonInfo : ButtonInfo = {
+  title: 'Somos o promotor de uma revolução na arte de rua!',
+  description: ['O PianoBike nasceu do desejo de mudar a forma como a arte de rua é feita na América Latina!', 'Somos a ponte entre os artistas, o público, o governo e as empresas.', 'Já fizemos uma mini revolução no Rio de Janeiro em 2019 e 2020 e agora, pós pandemia, estamos entrando de cabeça no mundo online e nossa escala agora é global!', 'Quer fazer parte desta revolução??', 'Clique em "FAÇA PARTE" para saber como.'],
 }
 
 export interface ButtonConfig {
   disabled : boolean
   isOpened : boolean
+  info : ButtonInfo
   open? : () => void
   close? : () => void
 }
@@ -19,9 +32,7 @@ interface OpenedModals {
   bePart: boolean
 }
 
-const BottomMenu = ({
-
-} : BottomMenuProps) => {
+const BottomMenu = () => {
   const [openedModals, setOpenedModals] = useState<OpenedModals>({ bePart: false, knowMore: false })
 
   function handleButtonClick(key : keyof OpenedModals, open : boolean) {
@@ -33,7 +44,7 @@ const BottomMenu = ({
     }
   }
 
-  function renderButton(text : string, config : ButtonConfig) {
+  function renderButton(label : string, config : ButtonConfig) {
     return (
     <>
       <Button
@@ -44,7 +55,7 @@ const BottomMenu = ({
       disabled={config.disabled}
       onClick={config.open}
     >
-      {text}
+      {label}
     </Button>
     <Modal
       open={config.isOpened}
@@ -53,12 +64,12 @@ const BottomMenu = ({
       aria-describedby="modal-modal-description"
     >
       <Box>
-        <Typography id={styles.modalTitle} variant="h6" component="h2">
-          Text in a modal
-        </Typography>
-        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-        </Typography>
+        <h3 id={styles.modalTitle}>
+          {config.info.title}
+        </h3>
+        <div>
+          {config.info.description.map((p) => <p>{p}</p>)}
+        </div>
       </Box>
     </Modal>
       </>
@@ -72,12 +83,14 @@ const BottomMenu = ({
         isOpened: openedModals.knowMore,
         open: handleButtonClick('knowMore', true),
         close: handleButtonClick('knowMore', false),
+        info: knowMoreButtonInfo,
       })}
       {renderButton('Faça parte!', {
         disabled: false,
         isOpened: openedModals.bePart,
         open: handleButtonClick('bePart', true),
         close: handleButtonClick('bePart', false),
+        info: knowMoreButtonInfo,
       })}
       {/* {renderButton('PianoBike Stage', {
         disabled: Configuration.Projects.PianoBikeStage.disabled,

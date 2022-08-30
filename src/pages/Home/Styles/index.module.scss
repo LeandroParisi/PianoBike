@@ -21,6 +21,7 @@ $firstAnimationDuration: 3s;
 
   .pitchPhrase {
     @include flexBox(column, flex-start, flex-start);
+    width: 100%;
     gap: 7.5vh;
     position: absolute;
     z-index: 2;
@@ -38,8 +39,9 @@ $firstAnimationDuration: 3s;
     }
 
     h2 {
-      @include typewriter($firstAnimationDuration - 1.5s, $firstAnimationDuration - 1.8s, backwards);
+      @include fadeIn($firstAnimationDuration - 1, $firstAnimationDuration - 1, both);
       margin-left: 2vw;
+      max-width: 85vw;
       font-size: $font-big;
     }
   }

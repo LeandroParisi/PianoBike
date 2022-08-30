@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/material'
+import { ThemeProvider, Typography } from '@mui/material'
 import classNames from 'classnames'
 import type { HeadFC } from 'gatsby'
 import * as React from 'react'
@@ -32,8 +32,8 @@ const LandingPage = () => (
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         />
       <article className={classNames(styles.pitchPhrase)}>
-        <h1>O 1º sobre rodas da América Latina!</h1>
-        <h2>Em uma nova etapa: agora você, artista, pode fazer parte desta revolução!</h2>
+        <Typography variant="h1" component="h1">O 1º sobre rodas da América Latina!</Typography>
+        <Typography variant="h1" component="h2">Em uma nova etapa: agora você pode fazer parte desta revolução!</Typography>
       </article>
       <BottomMenu />
     </main>
