@@ -10,7 +10,7 @@ import * as styles from './Home/Styles/index.module.scss'
 
 const youtubeVideoInfo = {
   controls: 0,
-  autoplay: 0,
+  autoplay: 1,
   rel: 0,
   mute: 1,
   modestbranding: 1,

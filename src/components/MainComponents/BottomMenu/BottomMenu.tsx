@@ -9,10 +9,7 @@ interface ButtonInfo {
   description : string[]
 }
 
-const bePartButtonInfo : ButtonInfo = {
-  title: '',
-  description: [''],
-}
+const formUrl = 'http://eepurl.com/h9Zzv5'
 
 const knowMoreButtonInfo : ButtonInfo = {
   title: 'Somos o promotor de uma revolução na arte de rua!',
@@ -22,7 +19,7 @@ const knowMoreButtonInfo : ButtonInfo = {
 export interface ButtonConfig {
   disabled : boolean
   isOpened : boolean
-  info : ButtonInfo
+  info? : ButtonInfo
   open? : () => void
   close? : () => void
 }
@@ -57,22 +54,24 @@ const BottomMenu = () => {
     >
       {label}
     </Button>
-    <Modal
-      open={config.isOpened}
-      onClose={config.close}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
-    >
-      <Box>
-        <h3 id={styles.modalTitle}>
-          {config.info.title}
-        </h3>
-        <div>
-          {config.info.description.map((p) => <p>{p}</p>)}
-        </div>
-      </Box>
-    </Modal>
-      </>
+    {config.info
+     && <Modal
+        open={config.isOpened}
+        onClose={config.close}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box>
+          <h3 id={styles.modalTitle}>
+            {config.info.title}
+          </h3>
+          <div>
+            {config.info.description.map((p) => <p>{p}</p>)}
+          </div>
+        </Box>
+      </Modal>
+    }
+    </>
     )
   }
 
@@ -88,9 +87,8 @@ const BottomMenu = () => {
       {renderButton('Faça parte!', {
         disabled: false,
         isOpened: openedModals.bePart,
-        open: handleButtonClick('bePart', true),
+        open: () => window.open(formUrl, '_blank').focus(),
         close: handleButtonClick('bePart', false),
-        info: knowMoreButtonInfo,
       })}
       {/* {renderButton('PianoBike Stage', {
         disabled: Configuration.Projects.PianoBikeStage.disabled,
