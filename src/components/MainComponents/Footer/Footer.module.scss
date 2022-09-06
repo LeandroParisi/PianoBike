@@ -17,8 +17,10 @@
     width: 30%;
   }
 
-  .left, .center {
-    p, a {
+  .left,
+  .center {
+    p,
+    a {
       font-size: $font-xxsmall;
     }
   }
@@ -29,18 +31,19 @@
       font-size: $font-xsmall;
     }
 
-  .right,
-  .center {
-    a {
-      color: $primaryYellow;
-
-      &:active {
+    .right,
+    .center {
+      a {
         color: $primaryYellow;
-      }
 
-      &:visited {
-        color: $primaryYellow;
-        opacity: 0.25;
+        &:active {
+          color: $primaryYellow;
+        }
+
+        &:visited {
+          color: $primaryYellow;
+          opacity: 0.25;
+        }
       }
     }
   }
