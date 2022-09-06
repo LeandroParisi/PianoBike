@@ -2,7 +2,7 @@
 import { Box, Modal } from '@mui/material'
 import Button from '@mui/material/Button'
 import React, { useState } from 'react'
-import * as styles from './BottomMenu.module.scss'
+import * as styles from './ActionButtons.module.scss'
 
 interface ButtonInfo {
   title : string
@@ -29,7 +29,7 @@ interface OpenedModals {
   bePart: boolean
 }
 
-const BottomMenu = () => {
+const ActionButtons = () => {
   const [openedModals, setOpenedModals] = useState<OpenedModals>({ bePart: false, knowMore: false })
 
   function handleButtonClick(key : keyof OpenedModals, open : boolean) {
@@ -97,4 +97,4 @@ const BottomMenu = () => {
   )
 }
 
-export default BottomMenu
+export default ActionButtons

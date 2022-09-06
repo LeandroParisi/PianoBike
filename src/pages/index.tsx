@@ -4,13 +4,14 @@ import type { HeadFC } from 'gatsby'
 import * as React from 'react'
 import '../assets/styling/scss/reset.scss'
 import { theme } from '../assets/styling/themes/Mui/createtheme'
-import BottomMenu from '../components/MainComponents/BottomMenu/BottomMenu'
+import ActionButtons from '../components/MainComponents/ActionButtons/ActionButtons'
+import Footer from '../components/MainComponents/Footer/Footer'
 import { Overlay } from '../components/Templates/Overlay/Overlay'
 import * as styles from './Home/Styles/index.module.scss'
 
 const youtubeVideoInfo = {
   controls: 0,
-  autoplay: 1,
+  autoplay: 0,
   rel: 0,
   mute: 1,
   modestbranding: 1,
@@ -35,7 +36,8 @@ const LandingPage = () => (
         <Typography variant="h1" component="h1">O 1º sobre rodas da América Latina!</Typography>
         <Typography variant="h1" component="h2">Em uma nova etapa: agora você pode fazer parte desta revolução!</Typography>
       </article>
-      <BottomMenu />
+      <ActionButtons />
+      <Footer />
     </main>
   </ThemeProvider>
 )

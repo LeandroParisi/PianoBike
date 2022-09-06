@@ -1,0 +1,46 @@
+@import "../../../assets/styling/scss/mixins.scss";
+@import "../../../assets/styling/scss/colors.scss";
+@import "../../../assets/styling/scss/fonts.scss";
+
+.footer {
+  @include flexBox(row, space-around);
+  height: 8.5%;
+  margin-top: -1%;
+  padding-top: 0.5%;
+  background-color: $primaryBlack;
+
+  p {
+    color: white;
+  }
+
+  .section {
+    width: 30%;
+  }
+
+  .left {
+    p {
+      font-size: $font-xxsmall;
+    }
+  }
+
+  .right,
+  .center {
+    p,
+    a {
+      font-size: $font-xsmall;
+    }
+
+    a {
+      color: $primaryYellow;
+
+      &:active {
+        color: $primaryYellow;
+      }
+
+      &:visited {
+        color: $primaryYellow;
+        opacity: 0.25;
+      }
+    }
+  }
+}
