@@ -17,19 +17,20 @@
     width: 30%;
   }
 
-  .left {
-    p {
+  .left, .center {
+    p, a {
       font-size: $font-xxsmall;
     }
   }
 
-  .right,
-  .center {
+  .right {
     p,
     a {
       font-size: $font-xsmall;
     }
 
+  .right,
+  .center {
     a {
       color: $primaryYellow;
 
