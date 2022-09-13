@@ -50,5 +50,6 @@ export const Head: HeadFC = () => (
     <title>PianoBike</title>
     <meta name="author" content="Leandro Parisi" />
     <meta name="description" content="First LATAM piano on wheels. Changing the way street are is done on our continent " />
+    <meta name="facebook-domain-verification" content="t6lhwv2j676u2js61r03o7025gcal6" />
   </>
 )
