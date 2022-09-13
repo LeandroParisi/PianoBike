@@ -34,7 +34,8 @@ const LandingPage = () => (
         />
       <article className={classNames(styles.pitchPhrase)}>
         <Typography variant="h1" component="h1">O 1º sobre rodas da América Latina!</Typography>
-        <Typography variant="h1" component="h2">Em uma nova etapa: agora você pode fazer parte desta revolução!</Typography>
+        <Typography variant="h1" component="h2">Promovemos a arte de rua de uma forma inovadora em todo o Brasil!</Typography>
+        <Typography variant="h1" component="h2">Eventos, casamentos, feiras de rua, eventos corporativos - Faça contato abaixo</Typography>
       </article>
       <ActionButtons />
       <Footer />
